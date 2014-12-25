@@ -244,7 +244,7 @@ Arayüzlerin ayrıştırılması.
 
 Aslında kurduğumuz cümlelerde bu ayrıştırmayı çok seri yapıyoruz fakat kod yazarken bunu gözden çok kaçırıyoruz. 
 Örnek : 
-"ya 1.6 dizel renoult sedan otomobil aldım" dediğinizde bunu otomatik yapıyor oluyoruz. 
+"ya 1.6 dizel Renault sedan otomobil aldım" dediğinizde bunu otomatik yapıyor oluyoruz. 
 
 ##### Yanlış Örnek: 
 ```php
