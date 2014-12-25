@@ -1,72 +1,72 @@
 #SOLID Prensipleri
 
-Solid prensipleri yazÄ±lÄ±m ile ilgili kullanÄ±lan 5 maddelik prensip serisidir. 
-   TasarÄ±m kalÄ±plarÄ±na uygun programlar geliÅŸtirildiÄŸinde bile bazÄ± sorunlar Ã§Ä±kmÄ±ÅŸ olup, 
-SOLID bu sorunlara Ã§Ã¶zÃ¼m olarak tasarlanmÄ±ÅŸtÄ±r. 
+Solid prensipleri yazılım ile ilgili kullanılan 5 maddelik prensip serisidir. 
+   Tasarım kalıplarına uygun programlar geliştirildiğinde bile bazı sorunlar çıkmış olup, 
+SOLID bu sorunlara çözüm olarak tasarlanmıştır. 
 
 ####1) Esnemezlik (Rigitidy) : 
-    YazÄ±lÄ±mÄ±n geliÅŸtirilmesi ve ekleme yapÄ±lmasÄ± ile ilgili sorunlar.
-####2) KÄ±rÄ±lganlÄ±k (Fragility) : 
-    YazÄ±lÄ±mÄ±n bir yerinde yapÄ±lan deÄŸiÅŸikliÄŸin baÅŸka bir bÃ¶lÃ¼mÃ¼ olumsuz etkilemesi.
+    Yazılımın geliştirilmesi ve ekleme yapılması ile ilgili sorunlar.
+####2) Kırılganlık (Fragility) : 
+    Yazılımın bir yerinde yapılan değişikliğin başka bir bölümü olumsuz etkilemesi.
 ####3) Sabitlik (Immobility) : 
-    GeliÅŸtirilen bir bÃ¶lÃ¼mÃ¼n baÅŸka bir yerde kullanÄ±lamamasÄ±. 
+    Geliştirilen bir bölümün başka bir yerde kullanılamaması. 
 
-   Bu sorunlar sadece yazÄ±lÄ±mÄ±n sorunlarÄ± deÄŸil, genel olarak yaÅŸamÄ±mÄ±zda olan sorunlardÄ±r ve bunlarÄ± 
-otomatik olarak Ã§Ã¶zÃ¼mleriz bazen. Bazende Ã§Ã¶zemediÄŸimiz iÃ§in sorunlarla karÅŸÄ±laÅŸÄ±rÄ±z. 
+   Bu sorunlar sadece yazılımın sorunları değil, genel olarak yaşamımızda olan sorunlardır ve bunları 
+otomatik olarak çözümleriz bazen. Bazende çözemediğimiz için sorunlarla karşılaşırız. 
 
-   Bir Ã¶rnek verelim: Bir lokanta aÃ§alÄ±m ve bunu yaparken SOLID'e nasÄ±l uyduÄŸumuza bakalÄ±m. 
+   Bir örnek verelim: Bir lokanta açalım ve bunu yaparken SOLID'e nasıl uyduğumuza bakalım. 
 
 ##1) (S)ingle Responsibility (Tek Sorumluluk) : 
-   MutfaÄŸÄ±mÄ±zda tezgahÄ±mÄ±zÄ± hem yemek malzemelerini doÄŸramak hem servis hem bulaÅŸÄ±k yÄ±kamak iÃ§in 
-kullanÄ±yor olsaydÄ±k ne olurdu? Hem mÃ¼ÅŸteriler aÃ§Ä±sÄ±ndan "hijyenik" olmaktan uzak hemde orda Ã§alÄ±ÅŸacak kiÅŸi ya da kiÅŸiler
-iÃ§in karmaÅŸÄ±k bir durum olurdu. Bu durum aynÄ± ÅŸekilde personel iÃ§in de geÃ§erli. Bir personeli hem bulaÅŸÄ±kÃ§Ä± hem garson 
-hem komi olarak kullanÄ±rsak oluÅŸacak sorunlarÄ± tahmin etmek zor deÄŸil. 
+   Mutfağımızda tezgahımızı hem yemek malzemelerini doğramak hem servis hem bulaşık yıkamak için 
+kullanıyor olsaydık ne olurdu? Hem müşteriler açısından "hijyenik" olmaktan uzak hemde orda çalışacak kişi ya da kişiler
+için karmaşık bir durum olurdu. Bu durum aynı şekilde personel için de geçerli. Bir personeli hem bulaşıkçı hem garson 
+hem komi olarak kullanırsak oluşacak sorunları tahmin etmek zor değil. 
 
-   Bu, yazÄ±lÄ±mÄ±mÄ±z iÃ§indeki ayrÄ±ÅŸtÄ±rma iÃ§in de Ã¶nemli. En temelde fonksiyon/metodlarÄ±mÄ±z tek bir iÅŸi yapmalÄ±,
-sÄ±nÄ±fÄ±mÄ±z tek bir iÅŸe yÃ¶nelik olmalÄ±, paketimiz/modÃ¼lÃ¼mÃ¼z/bileÅŸenimiz tek bir iÅŸi yapmalÄ±. 
+   Bu, yazılımımız içindeki ayrıştırma için de önemli. En temelde fonksiyon/metodlarımız tek bir işi yapmalı,
+sınıfımız tek bir işe yönelik olmalı, paketimiz/modülümüz/bileşenimiz tek bir işi yapmalı. 
 
-##2) (O)pen/Closed (GeliÅŸtirmeye AÃ§Ä±k/DeÄŸiÅŸtirmeye KapalÄ±) :
-   Yine lokantamÄ±zÄ±n personelini seÃ§erken sadece makarna yapan bir iÅŸletme olduÄŸumuz varsayÄ±mÄ± ile hareket edecek olursak, 
-   makarna konusunda geniÅŸlemek iÃ§in minimum deÄŸiÅŸikikle yapabilmek lazÄ±m. Malzeme deÄŸiÅŸiklikleri ile Ã¼rÃ¼n yelpazesini 
-   geniÅŸ tutmak mÃ¼mkÃ¼n olacaktÄ±r. 
+##2) (O)pen/Closed (Geliştirmeye Açık/Değiştirmeye Kapalı) :
+   Yine lokantamızın personelini seçerken sadece makarna yapan bir işletme olduğumuz varsayımı ile hareket edecek olursak, 
+   makarna konusunda genişlemek için minimum değişikikle yapabilmek lazım. Malzeme değişiklikleri ile ürün yelpazesini 
+   geniş tutmak mümkün olacaktır. 
    
-   Personelimizi seÃ§erken kendini geliÅŸtirebilen personelle Ã§alÄ±ÅŸmak sÄ±k sÄ±k personel deÄŸiÅŸikliÄŸi yapmamÄ±zÄ±n Ã¶nÃ¼ne geÃ§er. 
+   Personelimizi seçerken kendini geliştirebilen personelle çalışmak sık sık personel değişikliği yapmamızın önüne geçer. 
 
-##3) (L)iskovâ€™s Substitution:
-   En basit hali ile Ã¼retilen yemeÄŸimizin beklentinin Ã§ok uzaÄŸÄ±nda olmamasÄ± lazÄ±m. 
-   Ã–rneÄŸin mÃ¼ÅŸteri tavkuklu makarna istediÄŸi zaman "makarnalÄ± tavuk" gelmemeli Ã¶nÃ¼ne. 
-   Ya da "ÅŸef garson" diye yetiÅŸtirilen yada iÅŸe alÄ±nan bir personelin aÅŸÃ§Ä±baÅŸÄ± olmasÄ± durumu nasÄ±l kabul edilemez bir durum ise
-   tÃ¼reyen sÄ±nÄ±flarÄ±nda benzer ÅŸekilde planlanmasÄ± gerekmektedir.
+##3) (L)iskov’s Substitution:
+   En basit hali ile üretilen yemeğimizin beklentinin çok uzağında olmaması lazım. 
+   Örneğin müşteri tavkuklu makarna istediği zaman "makarnalı tavuk" gelmemeli önüne. 
+   Ya da "şef garson" diye yetiştirilen yada işe alınan bir personelin aşçıbaşı olması durumu nasıl kabul edilemez bir durum ise
+   türeyen sınıflarında benzer şekilde planlanması gerekmektedir.
    
 ##4) (I)Nterface Segregation: 
-   BÃ¼tÃ¼n personelin ve yemeklerin ana tanÄ±mlarÄ±nÄ±n yapÄ±lmÄ±ÅŸ olmasÄ± gerekmektedir. Personel iÃ§in "gÃ¶rev tanÄ±mÄ±", 
-   yemek iÃ§in "tarif" buna Ã¶rneklenebilir. Ve bu tanÄ±m ve tarifleri kullanÄ±rken Ã¶yle ayrÄ±ÅŸtÄ±rmalÄ±yÄ±z ki deÄŸiÅŸik yapÄ±lar iÃ§in
-   sorunlar Ã§Ä±kmasÄ±n. Ã–rneÄŸin, kremalÄ± mantarlÄ± tavuklu makarna hazÄ±rlanÄ±rken krema mantar ve tavuk birlikte soslu halde 
-   hazÄ±r durursa mÃ¼ÅŸteri, "Ben kremalÄ± mantarlÄ± istiyorum." dediÄŸinde sosun iÃ§inden tavuk ayÄ±klamak zorunda kalmamak lazÄ±m. 
+   Bütün personelin ve yemeklerin ana tanımlarının yapılmış olması gerekmektedir. Personel için "görev tanımı", 
+   yemek için "tarif" buna örneklenebilir. Ve bu tanım ve tarifleri kullanırken öyle ayrıştırmalıyız ki değişik yapılar için
+   sorunlar çıkmasın. Örneğin, kremalı mantarlı tavuklu makarna hazırlanırken krema mantar ve tavuk birlikte soslu halde 
+   hazır durursa müşteri, "Ben kremalı mantarlı istiyorum." dediğinde sosun içinden tavuk ayıklamak zorunda kalmamak lazım. 
    
-   SÄ±nÄ±fÄ±mÄ±zÄ± tanÄ±mlarken hem kurallara uydurmalÄ± hemde esnek olmasÄ±nÄ± saÄŸlamamÄ±z gerekmektedir. 
+   Sınıfımızı tanımlarken hem kurallara uydurmalı hemde esnek olmasını sağlamamız gerekmektedir. 
    
 ##5) (D)Ependency Inversion:
-  MakarnalarÄ±mÄ±zÄ± "Filiz makarnadan" alÄ±yoruz ibaresinin bulunmasÄ± ya da personelinizin ismi ile Ã§aÄŸrÄ±lmasÄ±nÄ± istemeniz 
-  bunlara Ã¶rnektir. Filiz makarna yerine baÅŸka makarna kullanmak istediÄŸinizde veya ErtuÄŸrul Åef iÅŸten ayrÄ±ldÄ±ÄŸÄ±nda 
-  bir bocalama yaÅŸamama ÅŸansÄ±nÄ±z yok. 
+  Makarnalarımızı "Filiz makarnadan" alıyoruz ibaresinin bulunması ya da personelinizin ismi ile çağrılmasını istemeniz 
+  bunlara örnektir. Filiz makarna yerine başka makarna kullanmak istediğinizde veya Ertuğrul Şef işten ayrıldığında 
+  bir bocalama yaşamama şansınız yok. 
   
-  AynÄ± ÅŸekilde sÄ±nÄ±flarÄ±mÄ±z baÅŸka sÄ±nÄ±flara, paketlerimiz/modÃ¼llerimiz/bileÅŸenlerimiz dÄ±ÅŸardaki baÅŸka yerlere baÄŸÄ±mlÄ± olmamalÄ±. 
+  Aynı şekilde sınıflarımız başka sınıflara, paketlerimiz/modüllerimiz/bileşenlerimiz dışardaki başka yerlere bağımlı olmamalı. 
   
-  Yukarda kabaca anlatmaya Ã§alÄ±ÅŸtÄ±ÄŸÄ±m yapÄ±lanma ile daha esnek daha az kÄ±rÄ±lgan ve Ã§alÄ±ÅŸma iÅŸ modelini istediÄŸimiz yere 
-  uyarlayabilir durumda oluruz. Ã–rnekler Ã§oÄŸaltÄ±labilir. YazÄ±lÄ±m aÃ§Ä±sÄ±ndan bu prensiplerin uygulanmÄ±ÅŸ olmasÄ± ya da tek baÅŸÄ±na bu 
-  kurallara uyulmuÅŸ olmasÄ± Ã¶nemsizdir. YazÄ±lan kod bir ÅŸekilde Ã§alÄ±ÅŸÄ±r. Ancak yazÄ±lÄ±mÄ±n geliÅŸmesi bÃ¼yÃ¼mesi ve Ã¶lÃ§eklenebilmesi 
-  aÃ§Ä±sÄ±ndan TasarÄ±m Desenleri ile birlikte kullanÄ±lmasÄ± ilerleyen projeler iÃ§in bÃ¼yÃ¼k avantaj saÄŸlayacaklardÄ±r. 
+  Yukarda kabaca anlatmaya çalıştığım yapılanma ile daha esnek daha az kırılgan ve çalışma iş modelini istediğimiz yere 
+  uyarlayabilir durumda oluruz. Örnekler çoğaltılabilir. Yazılım açısından bu prensiplerin uygulanmış olması ya da tek başına bu 
+  kurallara uyulmuş olması önemsizdir. Yazılan kod bir şekilde çalışır. Ancak yazılımın gelişmesi büyümesi ve ölçeklenebilmesi 
+  açısından Tasarım Desenleri ile birlikte kullanılması ilerleyen projeler için büyük avantaj sağlayacaklardır. 
   
-  SOLID prensipleri tek baÅŸÄ±na mucizeler yaratan bir sorun Ã§Ã¶zÃ¼cÃ¼ deÄŸildir. YazÄ±lÄ±m geliÅŸtiricilerin karÅŸÄ±laÅŸtÄ±ÄŸÄ± sorunlarÄ± 
-  en aza indirmek iÃ§in oluÅŸturulmuÅŸ ÅŸablonlardan bir tanesidir. 
+  SOLID prensipleri tek başına mucizeler yaratan bir sorun çözücü değildir. Yazılım geliştiricilerin karşılaştığı sorunları 
+  en aza indirmek için oluşturulmuş şablonlardan bir tanesidir. 
   
-  Biz yukardaki sayÄ±lanlarÄ± gÃ¼nlÃ¼k yaÅŸamÄ±mÄ±zda bir ÅŸekilde gerÃ§ekleÅŸtiriyoruz farkÄ±nda olmadan. Åimdi yazÄ±lÄ±m aÃ§Ä±sÄ±ndan bu 
-  kurallarÄ± Ã¶rnekleyelim. 
+  Biz yukardaki sayılanları günlük yaşamımızda bir şekilde gerçekleştiriyoruz farkında olmadan. Şimdi yazılım açısından bu 
+  kuralları örnekleyelim. 
   
 ##1) (S)ingle Responsibility: 
 
-##### YanlÄ±ÅŸ Ã–rnek: 
+##### Yanlış Örnek: 
 ```php
 Class Araba {
    function motor()
@@ -102,19 +102,19 @@ Class Araba {
 }
 ```
 
-Yukardaki kodumuzda neredeyse bÃ¼tÃ¼n kurallarÄ± yÄ±kmaya yÃ¶nelik davrandÄ±k :)) 
+Yukardaki kodumuzda neredeyse bütün kuralları yıkmaya yönelik davrandık :)) 
 
-   Bu Ã¶rneÄŸi daha da uzatabiliriz; bir arabada olmasÄ± gereken her ÅŸeyi burada fonksiyon olarak yazÄ±n. 
-Peki bunun nesi yanlÄ±ÅŸ? Araba sÄ±nÄ±fÄ± ve sadece araba ile ilgili fonksiyonlar var. Tek sorumluluk deÄŸil mi? 
+   Bu örneği daha da uzatabiliriz; bir arabada olması gereken her şeyi burada fonksiyon olarak yazın. 
+Peki bunun nesi yanlış? Araba sınıfı ve sadece araba ile ilgili fonksiyonlar var. Tek sorumluluk değil mi? 
 
-   Ä°ÅŸte burda yazÄ±lÄ±mcÄ±nÄ±n karar mekanizmasÄ± devreye giriyor. Åu an bizim yaptÄŸÄ±mÄ±z ÅŸey dÃ¶kme araba yapmak. 
-Bunu modifiye etmek bazÄ± Ã¶zelliklerini deÄŸiÅŸtirmek neredeyse yeni araba yapmaktan daha zor olacak. :) 
-Bunu basitleÅŸtirmek iÃ§in uygun bÃ¶lÃ¼mlere ayÄ±rmamÄ±z gerekiyor. Ve her bÃ¶lÃ¼m iÃ§in, bÃ¶lÃ¼mÃ¼n yapacaÄŸÄ± iÅŸi yapmasÄ±nÄ± saÄŸlÄ±yoruz. 
-BaÅŸka bir ÅŸekilde Ã¶rnekleyelim. Almanya'da Ã§alÄ±ÅŸanlarÄ±n genel bir betimlemesi vardÄ±r "Adam fabrikada adam Ã§alÄ±ÅŸtÄ±rÄ±yor 
-sadece vida sÄ±kmak iÃ§in." Sorumluluk alanÄ± belli ve net sÄ±nÄ±flar, metodlar, fonksiyonlar, paketler Ã¼retmek yazÄ±lÄ±mÄ±nÄ±zÄ± 
-daha gÃ¼Ã§lÃ¼ kÄ±lacaktÄ±r. 
+   İşte burda yazılımcının karar mekanizması devreye giriyor. Şu an bizim yaptğımız şey dökme araba yapmak. 
+Bunu modifiye etmek bazı özelliklerini değiştirmek neredeyse yeni araba yapmaktan daha zor olacak. :) 
+Bunu basitleştirmek için uygun bölümlere ayırmamız gerekiyor. Ve her bölüm için, bölümün yapacağı işi yapmasını sağlıyoruz. 
+Başka bir şekilde örnekleyelim. Almanya'da çalışanların genel bir betimlemesi vardır "Adam fabrikada adam çalıştırıyor 
+sadece vida sıkmak için." Sorumluluk alanı belli ve net sınıflar, metodlar, fonksiyonlar, paketler üretmek yazılımınızı 
+daha güçlü kılacaktır. 
 
-##### DoÄŸru Ã–rnek: 
+##### Doğru Örnek: 
 ```php
 Class  Araba {
     function motor()
@@ -137,7 +137,7 @@ Class  Araba {
 
 ##2) (O)pen/Closed
 
-##### YanlÄ±ÅŸ Ã–rnek: 
+##### Yanlış Örnek: 
 
 ```php
 Class Notlar {
@@ -154,12 +154,12 @@ Class Notlar {
 }
 ```
 
-Buradaki Ã¶rnekte fonksiyonumuz sadece hesaplÄ±yor evet. Sorun nerede? Bir not daha eklemek istediÄŸimizde ne olacak? 
-Hatta 2 not ortalamasÄ±nÄ± nasÄ±l alacaÄŸÄ±z? Bu kodu geliÅŸtirmek iÃ§in deÄŸiÅŸiklik yapmak zorundayÄ±z. Tabi bu, Ã¶rnekleme iÃ§in 
-Ã§ok kaba bir Ã¶rnek yazÄ±lÄ±mda istenen ÅŸey, bir deÄŸiÅŸiklik geliÅŸtirme yapÄ±lacaÄŸÄ±z zaman Ã¶nceden yazÄ±lmÄ±ÅŸ koda minimum 
-mÃ¼dahale gerekmesi Ã¼zerine. 
+Buradaki örnekte fonksiyonumuz sadece hesaplıyor evet. Sorun nerede? Bir not daha eklemek istediğimizde ne olacak? 
+Hatta 2 not ortalamasını nasıl alacağız? Bu kodu geliştirmek için değişiklik yapmak zorundayız. Tabi bu, örnekleme için 
+çok kaba bir örnek yazılımda istenen şey, bir değişiklik geliştirme yapılacağız zaman önceden yazılmış koda minimum 
+müdahale gerekmesi üzerine. 
 
-##### DoÄŸru Ã–rnek: 
+##### Doğru Örnek: 
 
 ```php
 Class Notlar {
@@ -180,12 +180,12 @@ Class Notlar {
 }
 ```
 
-##3) (L)iskovâ€™s Substitution:
+##3) (L)iskov’s Substitution:
 
-SOLID prensiplerinden anlamasÄ± en zor olanÄ± (bana gÃ¶re). Ã‡ok kaba bir Ã¶rnek vermek gerekirse; 
-siyahi bir Ã§ocuk gÃ¶rdÃ¼ÄŸÃ¼nÃ¼zde anne yada babasÄ±nÄ±n en azÄ±ndan birinin siyahi olmasÄ±nÄ± beklersiniz.
+SOLID prensiplerinden anlaması en zor olanı (bana göre). Çok kaba bir örnek vermek gerekirse; 
+siyahi bir çocuk gördüğünüzde anne yada babasının en azından birinin siyahi olmasını beklersiniz.
 
-##### YanlÄ±ÅŸ Ã–rnek: 
+##### Yanlış Örnek: 
 
 ```php
 Class Dikdortgen {
@@ -234,26 +234,26 @@ $kare->yukseklik = 10;
 echo $kare->alan();
 ```
 
-Yukardaki Ã¶rnekte basit bir ifade olan "DikdÃ¶rtgenin kenarlarÄ± eÅŸitse karedir. Ya da her kare bir dikdÃ¶rtgendir." ifadesini 
-kodlamÄ±ÅŸ durumdayÄ±z.
+Yukardaki örnekte basit bir ifade olan "Dikdörtgenin kenarları eşitse karedir. Ya da her kare bir dikdörtgendir." ifadesini 
+kodlamış durumdayız.
 
-Åimdi beklenen sonuÃ§ = 50 karÅŸÄ±laÅŸÄ±lan sonuÃ§ = 100
+Şimdi beklenen sonuç = 50 karşılaşılan sonuç = 100
 
 ##4) (I)nterface Segregation
-ArayÃ¼zlerin ayrÄ±ÅŸtÄ±rÄ±lmasÄ±. 
+Arayüzlerin ayrıştırılması. 
 
-AslÄ±nda kurduÄŸumuz cÃ¼mlelerde bu ayrÄ±ÅŸtÄ±rmayÄ± Ã§ok seri yapÄ±yoruz fakat kod yazarken bunu gÃ¶zden Ã§ok kaÃ§Ä±rÄ±yoruz. 
-Ã–rnek : 
-"ya 1.6 dizel renoult sedan otomobil aldÄ±m" dediÄŸinizde bunu otomatik yapÄ±yor oluyoruz. 
+Aslında kurduğumuz cümlelerde bu ayrıştırmayı çok seri yapıyoruz fakat kod yazarken bunu gözden çok kaçırıyoruz. 
+Örnek : 
+"ya 1.6 dizel renoult sedan otomobil aldım" dediğinizde bunu otomatik yapıyor oluyoruz. 
 
-##### YanlÄ±ÅŸ Ã–rnek: 
+##### Yanlış Örnek: 
 ```php
 Class AldigimAraba implements Cc16DizelSedanInterface
 {
   
 }
 ```
-##### DoÄŸru Ã–rnek: 
+##### Doğru Örnek: 
 ```php
 Class AldigimAraba implements Cc16InterFace, DizelInterFace, SedanInterFace
 {
@@ -263,9 +263,9 @@ Class AldigimAraba implements Cc16InterFace, DizelInterFace, SedanInterFace
 
 ##5) (D)ependency Inversion Prensibi
 
-DÄ±ÅŸa baÄŸÄ±mlÄ±lÄ±klarda tek bir yere baÄŸÄ±mlÄ± olmama durumunun saÄŸlanmasÄ±. 
+Dışa bağımlılıklarda tek bir yere bağımlı olmama durumunun sağlanması. 
 
-##### YanlÄ±ÅŸ Ã–rnek: 
+##### Yanlış Örnek: 
 ```php
 Class BenzinliMotor()
 {
@@ -278,10 +278,10 @@ Class BenzinliMotor()
 
 }
 ```
-   AldÄ±ÄŸÄ±mÄ±z arabada "Benzini Shell'den alacaksÄ±n." gibi bir zorunluluk olsa idi ne kadar kÄ±zardÄ±k deÄŸil mi? 
-Fakat kendi sÄ±nÄ±flarÄ±mÄ±za paketlerimize bileÅŸenlerimize bunu yapmaktan hiÃ§ Ã§ekinmiyoruz. Neden acaba?
+   Aldığımız arabada "Benzini Shell'den alacaksın." gibi bir zorunluluk olsa idi ne kadar kızardık değil mi? 
+Fakat kendi sınıflarımıza paketlerimize bileşenlerimize bunu yapmaktan hiç çekinmiyoruz. Neden acaba?
 
-##### DoÄŸru Ã–rnek: 
+##### Doğru Örnek: 
 
 ```php
 Class BenzinliMotor()
@@ -299,14 +299,14 @@ Bonus :
 
 ### Inversion Of Control
 
-Åimdi yukarda Ã¶rneÄŸimizde Benzinlik olan herhangi bir yere girip benzin alacaÄŸÄ±mÄ±zÄ± belirttik.
-Peki "hangi benzinlik" olacaÄŸÄ±na nerde karar vereceÄŸiz? VerdiÄŸimiz kararÄ± nasÄ±l iileteceÄŸiz?
+Şimdi yukarda örneğimizde Benzinlik olan herhangi bir yere girip benzin alacağımızı belirttik.
+Peki "hangi benzinlik" olacağına nerde karar vereceğiz? Verdiğimiz kararı nasıl iileteceğiz?
 
-iÅŸte bu yapÄ± iÃ§in kullanÄ±lan yapÄ±lardan bir tanesi IoC Container yapÄ±sÄ±. 
-IoC bir zorunluluk deÄŸil "desen,kalÄ±p" ne diye adlandÄ±rÄ±rsanÄ±z adlandÄ±rÄ±n "Ã§Ã¶zÃ¼m"dÃ¼r.
+işte bu yapı için kullanılan yapılardan bir tanesi IoC Container yapısı. 
+IoC bir zorunluluk değil "desen,kalıp" ne diye adlandırırsanız adlandırın "çözüm"dür.
 
-PopÃ¼ler PHP Ã§atÄ±larÄ±ndan laravel'de IoC Ã§Ã¶zÃ¼mlemesi Ã¼zerine Ã¶zellikle durulmuÅŸtur. 
-##Ã–rnek
+Popüler PHP çatılarından laravel'de IoC çözümlemesi üzerine özellikle durulmuştur. 
+##Örnek
 ```php
 App::bind('Benzinlik', function($app)
 {
@@ -314,7 +314,7 @@ App::bind('Benzinlik', function($app)
 });
 ``` 
 
-##Ã–rnek
+##Örnek
 ```php
         $app->bind('Authority\Repo\Session\SessionInterface', function($app)
         {
@@ -323,7 +323,7 @@ App::bind('Benzinlik', function($app)
             );
         });
 
-//aÅŸaÄŸÄ±dakiinterfaceden Ã¼retilmiÅŸ bir sÄ±nÄ±f tanÄ±mlaman lazÄ±m :))) namespace kullanmÄ±ÅŸ
+//aşağıdakiinterfaceden üretilmiş bir sınıf tanımlaman lazım :))) namespace kullanmış
 namespace Authority\Repo\Session;
 interface SessionInterface
 {
@@ -332,11 +332,11 @@ interface SessionInterface
 ```
 ```php
 
-        $app->bind('Authority\Service\Form\Login\LoginForm', function($app) // Loginform $login tanÄ±mlarsan
+        $app->bind('Authority\Service\Form\Login\LoginForm', function($app) // Loginform $login tanımlarsan
         {
-            return new LoginForm(  //LoginForm classÄ±nda bir nesne yaratÄ±rsÄ±n
-                new LoginFormLaravelValidator( $app['validator'] ), //Loginform() iinde tanÄ±mladngÄ±na gÃ¶re constructor, demek ki aynÄ± anda LoginFormlaravelValidator yaratÄ±lacak 
-                $app->make('Authority\Repo\Session\SessionInterface') // ve SessionInterface yaratÄ±lacak ? :/ yani LoginForm($param1, $param2) ÅŸeklinde o yÃ¼zden iÃ§ini doldurmuÅŸ?
+            return new LoginForm(  //LoginForm classında bir nesne yaratırsın
+                new LoginFormLaravelValidator( $app['validator'] ), //Loginform() iinde tanımladngına göre constructor, demek ki aynı anda LoginFormlaravelValidator yaratılacak 
+                $app->make('Authority\Repo\Session\SessionInterface') // ve SessionInterface yaratılacak ? :/ yani LoginForm($param1, $param2) şeklinde o yüzden içini doldurmuş?
             );
         });
         
@@ -348,7 +348,7 @@ $app->bind('benzinlik',$app)
 
 
 //LoginForm.php nin constructor u
-	public function __construct(ValidableInterface $validator, SessionInterface $session) //demek ki doÄŸru anlamÄ±sÄ±m
+	public function __construct(ValidableInterface $validator, SessionInterface $session) //demek ki doğru anlamısım
 	{
 		$this->validator = $validator;
 		$this->session = $session;
@@ -357,7 +357,7 @@ $app->bind('benzinlik',$app)
 
 
 
-//Burda tanÄ±mladÄ±ÄŸÄ±n ÅŸeyi kullanmak iÃ§in
+//Burda tanımladığın şeyi kullanmak için
 
 $benzinlik = $app->make('benzinlik'); 
     
