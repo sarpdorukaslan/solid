@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Solid by resulaslan</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/resulaslan/solid">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/resulaslan/solid/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/resulaslan/solid/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Solid</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/resulaslan">resulaslan</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="solid-prensipleri" class="anchor" href="#solid-prensipleri" aria-hidden="true"><span class="octicon octicon-link"></span></a>SOLID Prensipleri</h1>
+
+<p>Solid prensipleri yazılım ile ilgili kullanılan 5 maddelik prensip serisidir. 
+   Tasarım kalıplarına uygun programlar geliştirildiğinde bile bazı sorunlar çıkmış olup, 
+SOLID bu sorunlara çözüm olarak tasarlanmıştır. </p>
+
+<h4>
+<a id="1-esnemezlik-rigitidy-" class="anchor" href="#1-esnemezlik-rigitidy-" aria-hidden="true"><span class="octicon octicon-link"></span></a>1) Esnemezlik (Rigitidy) :</h4>
+
+<pre><code>Yazılımın geliştirilmesi ve ekleme yapılması ile ilgili sorunlar.
+</code></pre>
+
+<h4>
+<a id="2-kırılganlık-fragility-" class="anchor" href="#2-k%C4%B1r%C4%B1lganl%C4%B1k-fragility-" aria-hidden="true"><span class="octicon octicon-link"></span></a>2) Kırılganlık (Fragility) :</h4>
+
+<pre><code>Yazılımın bir yerinde yapılan değişikliğin başka bir bölümü olumsuz etkilemesi.
+</code></pre>
+
+<h4>
+<a id="3-sabitlik-immobility-" class="anchor" href="#3-sabitlik-immobility-" aria-hidden="true"><span class="octicon octicon-link"></span></a>3) Sabitlik (Immobility) :</h4>
+
+<pre><code>Geliştirilen bir bölümün başka bir yerde kullanılamaması. 
+</code></pre>
+
+<p>Bu sorunlar sadece yazılımın sorunları değil, genel olarak yaşamımızda olan sorunlardır ve bunları 
+otomatik olarak çözümleriz bazen. Bazende çözemediğimiz için sorunlarla karşılaşırız. </p>
+
+<p>Bir örnek verelim: Bir lokanta açalım ve bunu yaparken SOLID'e nasıl uyduğumuza bakalım. </p>
+
+<h2>
+<a id="1-single-responsibility-tek-sorumluluk-" class="anchor" href="#1-single-responsibility-tek-sorumluluk-" aria-hidden="true"><span class="octicon octicon-link"></span></a>1) (S)ingle Responsibility (Tek Sorumluluk) :</h2>
+
+<p>Mutfağımızda tezgahımızı hem yemek malzemelerini doğramak hem servis hem bulaşık yıkamak için 
+kullanıyor olsaydık ne olurdu? Hem müşteriler açısından "hijyenik" olmaktan uzak hemde orda çalışacak kişi ya da kişiler
+için karmaşık bir durum olurdu. Bu durum aynı şekilde personel için de geçerli. Bir personeli hem bulaşıkçı hem garson 
+hem komi olarak kullanırsak oluşacak sorunları tahmin etmek zor değil. </p>
+
+<p>Bu, yazılımımız içindeki ayrıştırma için de önemli. En temelde fonksiyon/metodlarımız tek bir işi yapmalı,
+sınıfımız tek bir işe yönelik olmalı, paketimiz/modülümüz/bileşenimiz tek bir işi yapmalı. </p>
+
+<h2>
+<a id="2-openclosed-geliştirmeye-açıkdeğiştirmeye-kapalı-" class="anchor" href="#2-openclosed-geli%C5%9Ftirmeye-a%C3%A7%C4%B1kde%C4%9Fi%C5%9Ftirmeye-kapal%C4%B1-" aria-hidden="true"><span class="octicon octicon-link"></span></a>2) (O)pen/Closed (Geliştirmeye Açık/Değiştirmeye Kapalı) :</h2>
+
+<p>Yine lokantamızın personelini seçerken sadece makarna yapan bir işletme olduğumuz varsayımı ile hareket edecek olursak, 
+   makarna konusunda genişlemek için minimum değişikikle yapabilmek lazım. Malzeme değişiklikleri ile ürün yelpazesini 
+   geniş tutmak mümkün olacaktır. </p>
+
+<p>Personelimizi seçerken kendini geliştirebilen personelle çalışmak sık sık personel değişikliği yapmamızın önüne geçer. </p>
+
+<h2>
+<a id="3-liskovs-substitution" class="anchor" href="#3-liskovs-substitution" aria-hidden="true"><span class="octicon octicon-link"></span></a>3) (L)iskov’s Substitution:</h2>
+
+<p>En basit hali ile üretilen yemeğimizin beklentinin çok uzağında olmaması lazım. 
+   Örneğin müşteri tavkuklu makarna istediği zaman "makarnalı tavuk" gelmemeli önüne. 
+   Ya da "şef garson" diye yetiştirilen yada işe alınan bir personelin aşçıbaşı olması durumu nasıl kabul edilemez bir durum ise
+   türeyen sınıflarında benzer şekilde planlanması gerekmektedir.</p>
+
+<h2>
+<a id="4-interface-segregation" class="anchor" href="#4-interface-segregation" aria-hidden="true"><span class="octicon octicon-link"></span></a>4) (I)Nterface Segregation:</h2>
+
+<p>Bütün personelin ve yemeklerin ana tanımlarının yapılmış olması gerekmektedir. Personel için "görev tanımı", 
+   yemek için "tarif" buna örneklenebilir. Ve bu tanım ve tarifleri kullanırken öyle ayrıştırmalıyız ki değişik yapılar için
+   sorunlar çıkmasın. Örneğin, kremalı mantarlı tavuklu makarna hazırlanırken krema mantar ve tavuk birlikte soslu halde 
+   hazır durursa müşteri, "Ben kremalı mantarlı istiyorum." dediğinde sosun içinden tavuk ayıklamak zorunda kalmamak lazım. </p>
+
+<p>Sınıfımızı tanımlarken hem kurallara uydurmalı hemde esnek olmasını sağlamamız gerekmektedir. </p>
+
+<h2>
+<a id="5-dependency-inversion" class="anchor" href="#5-dependency-inversion" aria-hidden="true"><span class="octicon octicon-link"></span></a>5) (D)Ependency Inversion:</h2>
+
+<p>Makarnalarımızı "Filiz makarnadan" alıyoruz ibaresinin bulunması ya da personelinizin ismi ile çağrılmasını istemeniz 
+  bunlara örnektir. Filiz makarna yerine başka makarna kullanmak istediğinizde veya Ertuğrul Şef işten ayrıldığında 
+  bir bocalama yaşamama şansınız yok. </p>
+
+<p>Aynı şekilde sınıflarımız başka sınıflara, paketlerimiz/modüllerimiz/bileşenlerimiz dışardaki başka yerlere bağımlı olmamalı. </p>
+
+<p>Yukarda kabaca anlatmaya çalıştığım yapılanma ile daha esnek daha az kırılgan ve çalışma iş modelini istediğimiz yere 
+  uyarlayabilir durumda oluruz. Örnekler çoğaltılabilir. Yazılım açısından bu prensiplerin uygulanmış olması ya da tek başına bu 
+  kurallara uyulmuş olması önemsizdir. Yazılan kod bir şekilde çalışır. Ancak yazılımın gelişmesi büyümesi ve ölçeklenebilmesi 
+  açısından Tasarım Desenleri ile birlikte kullanılması ilerleyen projeler için büyük avantaj sağlayacaklardır. </p>
+
+<p>SOLID prensipleri tek başına mucizeler yaratan bir sorun çözücü değildir. Yazılım geliştiricilerin karşılaştığı sorunları 
+  en aza indirmek için oluşturulmuş şablonlardan bir tanesidir. </p>
+
+<p>Biz yukardaki sayılanları günlük yaşamımızda bir şekilde gerçekleştiriyoruz farkında olmadan. Şimdi yazılım açısından bu 
+  kuralları örnekleyelim. </p>
+
+<h2>
+<a id="1-single-responsibility" class="anchor" href="#1-single-responsibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>1) (S)ingle Responsibility:</h2>
+
+<h5>
+<a id="yanlış-Örnek" class="anchor" href="#yanl%C4%B1%C5%9F-%C3%96rnek" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yanlış Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">Araba</span> {</span>
+<span class="pl-s2">   <span class="pl-st">function</span> <span class="pl-en">motor</span>()</span>
+<span class="pl-s2">   {</span>
+<span class="pl-s2">     <span class="pl-k">if</span> ($<span class="pl-vo">benzinVarmi</span>() <span class="pl-k">!</span><span class="pl-k">=</span> <span class="pl-c1">false</span>)</span>
+<span class="pl-s2">     {</span>
+<span class="pl-s2">       <span class="pl-vo">$motorDurumu</span> <span class="pl-k">=</span> calistir();</span>
+<span class="pl-s2">     }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">   }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">   <span class="pl-st">function</span> <span class="pl-en">benzinVarmi</span>()</span>
+<span class="pl-s2">   {</span>
+<span class="pl-s2">     <span class="pl-k">return</span> depoDaNeKadarYakitVar();</span>
+<span class="pl-s2">   }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">   <span class="pl-st">function</span> <span class="pl-en">depodaNeKadarYakitVar</span>()</span>
+<span class="pl-s2">   {</span>
+<span class="pl-s2">     <span class="pl-vo">$depo</span> <span class="pl-k">=</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">depo</span>;</span>
+<span class="pl-s2">     <span class="pl-vo">$yakitDurumu</span> <span class="pl-k">=</span> <span class="pl-vo">$depo</span><span class="pl-k">-&gt;</span><span class="pl-vo">yakitDurumu</span>;</span>
+<span class="pl-s2">     <span class="pl-k">if</span> (<span class="pl-vo">$yakitDurumu</span> <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>)</span>
+<span class="pl-s2">       <span class="pl-k">return</span> <span class="pl-vo">$yakitDurumu</span></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">     <span class="pl-k">return</span> <span class="pl-c1">false</span>;</span>
+<span class="pl-s2">   }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">   <span class="pl-st">function</span> <span class="pl-en">depoDurumu</span>()</span>
+<span class="pl-s2">   {</span>
+<span class="pl-s2">     <span class="pl-vo">$yakitYuksekligi</span> <span class="pl-k">=</span> <span class="pl-c1">10</span>;</span>
+<span class="pl-s2">     <span class="pl-vo">$herCmDeKacLitreYakitVar</span> <span class="pl-k">=</span> <span class="pl-c1">4</span>;</span>
+<span class="pl-s2">     <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">depo</span> <span class="pl-k">=</span> <span class="pl-vo">$yakitYuksekligi</span> <span class="pl-k">*</span> <span class="pl-vo">$herCmDeKacLitreYakitVar</span>;</span>
+<span class="pl-s2">   }</span>
+<span class="pl-s2">}</span></pre></div>
+
+<p>Yukardaki kodumuzda neredeyse bütün kuralları yıkmaya yönelik davrandık :)) </p>
+
+<p>Bu örneği daha da uzatabiliriz; bir arabada olması gereken her şeyi burada fonksiyon olarak yazın. 
+Peki bunun nesi yanlış? Araba sınıfı ve sadece araba ile ilgili fonksiyonlar var. Tek sorumluluk değil mi? </p>
+
+<p>İşte burda yazılımcının karar mekanizması devreye giriyor. Şu an bizim yaptğımız şey dökme araba yapmak. 
+Bunu modifiye etmek bazı özelliklerini değiştirmek neredeyse yeni araba yapmaktan daha zor olacak. :) 
+Bunu basitleştirmek için uygun bölümlere ayırmamız gerekiyor. Ve her bölüm için, bölümün yapacağı işi yapmasını sağlıyoruz. 
+Başka bir şekilde örnekleyelim. Almanya'da çalışanların genel bir betimlemesi vardır "Adam fabrikada adam çalıştırıyor 
+sadece vida sıkmak için." Sorumluluk alanı belli ve net sınıflar, metodlar, fonksiyonlar, paketler üretmek yazılımınızı 
+daha güçlü kılacaktır. </p>
+
+<h5>
+<a id="doğru-Örnek" class="anchor" href="#do%C4%9Fru-%C3%96rnek" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doğru Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span>  <span class="pl-en">Araba</span> {</span>
+<span class="pl-s2">    <span class="pl-st">function</span> <span class="pl-en">motor</span>()</span>
+<span class="pl-s2">    {</span>
+<span class="pl-s2">        <span class="pl-vo">$motor</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">Motor</span>();</span>
+<span class="pl-s2">        <span class="pl-k">try</span> {</span>
+<span class="pl-s2">          <span class="pl-vo">$motor</span><span class="pl-k">-&gt;</span>calistir();</span>
+<span class="pl-s2">        }<span class="pl-k">catch</span>(<span class="pl-s3">BenzinException</span> <span class="pl-vo">$e</span>)</span>
+<span class="pl-s2">        {</span>
+<span class="pl-s2">          <span class="pl-s3">Uyari</span><span class="pl-k">::</span>goster(<span class="pl-vo">$e</span><span class="pl-k">-&gt;</span>message());</span>
+<span class="pl-s2">        }</span>
+<span class="pl-s2">        <span class="pl-k">catch</span>(<span class="pl-s3">ArizaException</span> <span class="pl-vo">$e</span>)</span>
+<span class="pl-s2">        {</span>
+<span class="pl-s2">         <span class="pl-s3">Alarm</span><span class="pl-k">::</span>cal(<span class="pl-vo">$e</span><span class="pl-k">-&gt;</span><span class="pl-vo">message</span>);</span>
+<span class="pl-s2">        }</span>
+<span class="pl-s2">    }</span>
+<span class="pl-s2">}</span></pre></div>
+
+<h2>
+<a id="2-openclosed" class="anchor" href="#2-openclosed" aria-hidden="true"><span class="octicon octicon-link"></span></a>2) (O)pen/Closed</h2>
+
+<h5>
+<a id="yanlış-Örnek-1" class="anchor" href="#yanl%C4%B1%C5%9F-%C3%96rnek-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yanlış Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">Notlar</span> {</span>
+<span class="pl-s2">  <span class="pl-s">public</span> <span class="pl-vo">$not1</span>;</span>
+<span class="pl-s2">  <span class="pl-s">public</span> <span class="pl-vo">$not2</span>;</span>
+<span class="pl-s2">  <span class="pl-s">public</span> <span class="pl-vo">$not3</span>;</span>
+<span class="pl-s2">  <span class="pl-s">protected</span> <span class="pl-vo">$sonuc</span></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-en">hesapla</span>()</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">        <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">sonuc</span> <span class="pl-k">=</span> (<span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">not1</span> <span class="pl-k">+</span>  <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">not2</span> <span class="pl-k">+</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">not3</span>)<span class="pl-k">/</span><span class="pl-c1">3</span>;</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<p>Buradaki örnekte fonksiyonumuz sadece hesaplıyor evet. Sorun nerede? Bir not daha eklemek istediğimizde ne olacak? 
+Hatta 2 not ortalamasını nasıl alacağız? Bu kodu geliştirmek için değişiklik yapmak zorundayız. Tabi bu, örnekleme için 
+çok kaba bir örnek yazılımda istenen şey, bir değişiklik geliştirme yapılacağız zaman önceden yazılmış koda minimum 
+müdahale gerekmesi üzerine. </p>
+
+<h5>
+<a id="doğru-Örnek-1" class="anchor" href="#do%C4%9Fru-%C3%96rnek-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doğru Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">Notlar</span> {</span>
+<span class="pl-s2">  <span class="pl-s">public</span> <span class="pl-vo">$notlar</span>;</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-s">protected</span> <span class="pl-vo">$sonuc</span></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-en">hesapla</span>()</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">        <span class="pl-vo">$toplamNot</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>;</span>
+<span class="pl-s2">        <span class="pl-k">foreach</span>(<span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">notlar</span> <span class="pl-k">as</span> <span class="pl-vo">$not</span>)</span>
+<span class="pl-s2">        {</span>
+<span class="pl-s2">            <span class="pl-vo">$toplamNot</span> <span class="pl-k">+</span><span class="pl-k">=</span> <span class="pl-vo">$not</span>;</span>
+<span class="pl-s2">        }</span>
+<span class="pl-s2">        <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">sonuc</span> <span class="pl-k">=</span> <span class="pl-vo">$toplamNot</span><span class="pl-k">/</span><span class="pl-s3">count</span>(<span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">notlar</span>);</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<h2>
+<a id="3-liskovs-substitution-1" class="anchor" href="#3-liskovs-substitution-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>3) (L)iskov’s Substitution:</h2>
+
+<p>SOLID prensiplerinden anlaması en zor olanı (bana göre). Çok kaba bir örnek vermek gerekirse; 
+siyahi bir çocuk gördüğünüzde anne yada babasının en azından birinin siyahi olmasını beklersiniz.</p>
+
+<h5>
+<a id="yanlış-Örnek-2" class="anchor" href="#yanl%C4%B1%C5%9F-%C3%96rnek-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yanlış Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">Dikdortgen</span> {</span>
+<span class="pl-s2">  <span class="pl-s">private</span> <span class="pl-vo">$yukseklik</span>;</span>
+<span class="pl-s2">  <span class="pl-s">private</span> <span class="pl-vo">$genislik</span>;</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-s">protected</span> <span class="pl-vo">$alan</span>;</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-s3">__set</span>(<span class="pl-vo">$kenar</span>,<span class="pl-vo">$deger</span>)</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">    <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">$alan</span> <span class="pl-k">=</span> <span class="pl-vo">$deger</span>;</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-en">alan</span>()</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">   <span class="pl-k">return</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">yukseklik</span> <span class="pl-k">*</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">genislik</span>;</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">Kare</span> <span class="pl-s">Extends</span> <span class="pl-e">Dikdortgen</span> {</span>
+<span class="pl-s2">  <span class="pl-s">private</span> <span class="pl-vo">$yukseklik</span>;</span>
+<span class="pl-s2">  <span class="pl-s">private</span> <span class="pl-vo">$genislik</span>;</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-s">protected</span> <span class="pl-vo">$alan</span>;</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-s3">__set</span>(<span class="pl-vo">$kenar</span>,<span class="pl-vo">$deger</span>)</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">    <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">yukseklik</span> <span class="pl-k">=</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">genislik</span> <span class="pl-k">=</span> <span class="pl-vo">$deger</span>;</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-en">alan</span>()</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">   <span class="pl-k">return</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">yukseklik</span> <span class="pl-k">*</span> <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">genislik</span>;</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$dikdortgen</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">Kare</span>();</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$kare</span><span class="pl-k">-&gt;</span><span class="pl-vo">genislik</span> <span class="pl-k">=</span> <span class="pl-c1">5</span>;</span>
+<span class="pl-s2"><span class="pl-vo">$kare</span><span class="pl-k">-&gt;</span><span class="pl-vo">yukseklik</span> <span class="pl-k">=</span> <span class="pl-c1">10</span>; </span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-s3">echo</span> <span class="pl-vo">$kare</span><span class="pl-k">-&gt;</span>alan();</span></pre></div>
+
+<p>Yukardaki örnekte basit bir ifade olan "Dikdörtgenin kenarları eşitse karedir. Ya da her kare bir dikdörtgendir." ifadesini 
+kodlamış durumdayız.</p>
+
+<p>Şimdi beklenen sonuç = 50 karşılaşılan sonuç = 100</p>
+
+<h2>
+<a id="4-interface-segregation-1" class="anchor" href="#4-interface-segregation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>4) (I)nterface Segregation</h2>
+
+<p>Arayüzlerin ayrıştırılması. </p>
+
+<p>Aslında kurduğumuz cümlelerde bu ayrıştırmayı çok seri yapıyoruz fakat kod yazarken bunu gözden çok kaçırıyoruz. 
+Örnek : 
+"ya 1.6 dizel Renault sedan otomobil aldım" dediğinizde bunu otomatik yapıyor oluyoruz. </p>
+
+<h5>
+<a id="yanlış-Örnek-3" class="anchor" href="#yanl%C4%B1%C5%9F-%C3%96rnek-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yanlış Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">AldigimAraba</span> <span class="pl-s">implements</span> <span class="pl-e">Cc16DizelSedanInterface</span></span>
+<span class="pl-s2">{</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<h5>
+<a id="doğru-Örnek-2" class="anchor" href="#do%C4%9Fru-%C3%96rnek-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doğru Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">AldigimAraba</span> <span class="pl-s">implements</span> <span class="pl-e">Cc16InterFace</span>, <span class="pl-e">DizelInterFace</span>, <span class="pl-e">SedanInterFace</span></span>
+<span class="pl-s2">{</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<h2>
+<a id="5-dependency-inversion-prensibi" class="anchor" href="#5-dependency-inversion-prensibi" aria-hidden="true"><span class="octicon octicon-link"></span></a>5) (D)ependency Inversion Prensibi</h2>
+
+<p>Dışa bağımlılıklarda tek bir yere bağımlı olmama durumunun sağlanması. </p>
+
+<h5>
+<a id="yanlış-Örnek-4" class="anchor" href="#yanl%C4%B1%C5%9F-%C3%96rnek-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yanlış Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">BenzinliMotor</span>()</span>
+<span class="pl-s2">{</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-en">benzinal</span>()</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">    <span class="pl-vo">$benzinlik</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-s3">ShellBenzinlik</span>();</span>
+<span class="pl-s2">    <span class="pl-vo">$benzinlik</span><span class="pl-k">-&gt;</span>pompaci()<span class="pl-k">-&gt;</span>doldur(<span class="pl-c1">50</span>);</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<p>Aldığımız arabada "Benzini Shell'den alacaksın." gibi bir zorunluluk olsa idi ne kadar kızardık değil mi? 
+Fakat kendi sınıflarımıza paketlerimize bileşenlerimize bunu yapmaktan hiç çekinmiyoruz. Neden acaba?</p>
+
+<h5>
+<a id="doğru-Örnek-3" class="anchor" href="#do%C4%9Fru-%C3%96rnek-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doğru Örnek:</h5>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-st">Class</span> <span class="pl-en">BenzinliMotor</span>()</span>
+<span class="pl-s2">{</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">  <span class="pl-st">function</span> <span class="pl-en">benzinal</span>(<span class="pl-s3">Benzinlik</span> <span class="pl-vo">$benzinlik</span>)</span>
+<span class="pl-s2">  {</span>
+<span class="pl-s2">    <span class="pl-vo">$benzinlik</span><span class="pl-k">-&gt;</span>pompaci()<span class="pl-k">-&gt;</span>doldur(<span class="pl-c1">50</span>);</span>
+<span class="pl-s2">  }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<p>Bonus : </p>
+
+<h3>
+<a id="inversion-of-control" class="anchor" href="#inversion-of-control" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inversion Of Control</h3>
+
+<p>Şimdi yukarda örneğimizde Benzinlik olan herhangi bir yere girip benzin alacağımızı belirttik.
+Peki "hangi benzinlik" olacağına nerde karar vereceğiz? Verdiğimiz kararı nasıl iileteceğiz?</p>
+
+<p>işte bu yapı için kullanılan yapılardan bir tanesi IoC Container yapısı. 
+IoC bir zorunluluk değil "desen,kalıp" ne diye adlandırırsanız adlandırın "çözüm"dür.</p>
+
+<p>Popüler PHP çatılarından laravel'de IoC çözümlemesi üzerine özellikle durulmuştur. </p>
+
+<h2>
+<a id="Örnek" class="anchor" href="#%C3%96rnek" aria-hidden="true"><span class="octicon octicon-link"></span></a>Örnek</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-s3">App</span><span class="pl-k">::</span>bind(<span class="pl-s1"><span class="pl-pds">'</span>Benzinlik<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>(<span class="pl-vo">$app</span>)</span>
+<span class="pl-s2">{</span>
+<span class="pl-s2">    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-s3">ShellBenzinlik</span>;</span>
+<span class="pl-s2">});</span></pre></div>
+
+<h2>
+<a id="Örnek-1" class="anchor" href="#%C3%96rnek-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Örnek</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2">        <span class="pl-vo">$app</span><span class="pl-k">-&gt;</span>bind(<span class="pl-s1"><span class="pl-pds">'</span>Authority\Repo\Session\SessionInterface<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>(<span class="pl-vo">$app</span>)</span>
+<span class="pl-s2">        {</span>
+<span class="pl-s2">            <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-s3">SentrySession</span>(</span>
+<span class="pl-s2">                <span class="pl-vo">$app</span>[<span class="pl-s1"><span class="pl-pds">'</span>sentry<span class="pl-pds">'</span></span>]</span>
+<span class="pl-s2">            );</span>
+<span class="pl-s2">        });</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-c">//aşağıdakiinterfaceden üretilmiş bir sınıf tanımlaman lazım :))) namespace kullanmış</span></span>
+<span class="pl-s2"><span class="pl-k">namespace</span> <span class="pl-en">Authority\Repo\Session</span>;</span>
+<span class="pl-s2"><span class="pl-st">interface</span> <span class="pl-en">SessionInterface</span></span>
+<span class="pl-s2">{</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">}</span></pre></div>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"></span>
+<span class="pl-s2">        <span class="pl-vo">$app</span><span class="pl-k">-&gt;</span>bind(<span class="pl-s1"><span class="pl-pds">'</span>Authority\Service\Form\Login\LoginForm<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>(<span class="pl-vo">$app</span>) // Loginform $login tanımlarsan</span>
+<span class="pl-s2">        {</span>
+<span class="pl-s2">            <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-s3">LoginForm</span>(  <span class="pl-c">//LoginForm classında bir nesne yaratırsın</span></span>
+<span class="pl-s2">                <span class="pl-k">new</span> <span class="pl-s3">LoginFormLaravelValidator</span>( <span class="pl-vo">$app</span>[<span class="pl-s1"><span class="pl-pds">'</span>validator<span class="pl-pds">'</span></span>] ), <span class="pl-c">//Loginform() iinde tanımladngına göre constructor, demek ki aynı anda LoginFormlaravelValidator yaratılacak </span></span>
+<span class="pl-s2">                <span class="pl-vo">$app</span><span class="pl-k">-&gt;</span>make(<span class="pl-s1"><span class="pl-pds">'</span>Authority\Repo\Session\SessionInterface<span class="pl-pds">'</span></span>) <span class="pl-c">// ve SessionInterface yaratılacak ? :/ yani LoginForm($param1, $param2) şeklinde o yüzden içini doldurmuş?</span></span>
+<span class="pl-s2">            );</span>
+<span class="pl-s2">        });</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span>bind(<span class="pl-s1"><span class="pl-pds">'</span>benzinlik<span class="pl-pds">'</span></span>,<span class="pl-vo">$app</span>)</span>
+<span class="pl-s2">{</span>
+<span class="pl-s2">    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-s3">ShellBenzinlik</span>();</span>
+<span class="pl-s2">} </span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-c">//LoginForm.php nin constructor u</span></span>
+<span class="pl-s2">    <span class="pl-s">public</span> <span class="pl-st">function</span> <span class="pl-s3">__construct</span>(<span class="pl-s3">ValidableInterface</span> <span class="pl-vo">$validator</span>, <span class="pl-s3">SessionInterface</span> <span class="pl-vo">$session</span>) <span class="pl-c">//demek ki doğru anlamısım</span></span>
+<span class="pl-s2">    {</span>
+<span class="pl-s2">        <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">validator</span> <span class="pl-k">=</span> <span class="pl-vo">$validator</span>;</span>
+<span class="pl-s2">        <span class="pl-vo">$this</span><span class="pl-k">-&gt;</span><span class="pl-vo">session</span> <span class="pl-k">=</span> <span class="pl-vo">$session</span>;</span>
+<span class="pl-s2">    }</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-c">//Burda tanımladığın şeyi kullanmak için</span></span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-vo">$benzinlik</span> <span class="pl-k">=</span> <span class="pl-vo">$app</span><span class="pl-k">-&gt;</span>make(<span class="pl-s1"><span class="pl-pds">'</span>benzinlik<span class="pl-pds">'</span></span>); </span></pre></div>
+
+<h1>
+<a id="teşekkürler" class="anchor" href="#te%C5%9Fekk%C3%BCrler" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teşekkürler</h1>
+
+<p>SOLID prensiplerini anlamamda ve bu dökümanı hazırlamamda kaynak olan yazı : 
+<a href="http://www.clubcrema.com/index.php/2013/05/solid-prensipleri-solid-principles/">http://www.clubcrema.com/index.php/2013/05/solid-prensipleri-solid-principles/</a>      </p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
