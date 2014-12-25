@@ -363,4 +363,4 @@ $benzinlik = $app->make('benzinlik');
 ```
 #Teşekkürler
 SOLID prensiplerini anlamamda ve bu dökümanı hazırlamamda kaynak olan yazı : 
-[SOLID PRENSİPLERİ]http://www.clubcrema.com/index.php/2013/05/solid-prensipleri-solid-principles/		
+http://www.clubcrema.com/index.php/2013/05/solid-prensipleri-solid-principles/		
