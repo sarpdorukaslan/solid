@@ -226,7 +226,7 @@ Class Kare Extends Dikdortgen {
   
 }
 
-$dikdortgen = new Kare();
+$kare = new Kare();
 
 $kare->genislik = 5;
 $kare->yukseklik = 10; 
