@@ -144,7 +144,7 @@ Class Notlar {
   public $not1;
   public $not2;
   public $not3;
-  protected $sonuc
+  protected $sonuc;
   
   function hesapla()
   {
@@ -165,7 +165,7 @@ müdahale gerekmesi üzerine.
 Class Notlar {
   public $notlar;
 
-  protected $sonuc
+  protected $sonuc;
   
   function hesapla()
   {
